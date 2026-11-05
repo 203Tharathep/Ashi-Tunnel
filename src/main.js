@@ -248,6 +248,25 @@ class AshiTunnelGame {
         this.requestLock();
       }
     });
+
+    // Mobile / iPad QR Modal Handlers
+    const openQR = (returnState) => {
+      this.qrReturnState = returnState;
+      this.exitPointerLock();
+      this.resetTouchJoystick();
+      document.getElementById("qr-modal").classList.remove("hidden");
+      this.state = "QR_MODAL";
+    };
+
+    document.getElementById("btn-open-qr-title")?.addEventListener("click", () => openQR("TITLE"));
+    document.getElementById("btn-open-qr-pause")?.addEventListener("click", () => openQR("PAUSED"));
+    document.getElementById("btn-close-qr")?.addEventListener("click", () => {
+      document.getElementById("qr-modal").classList.add("hidden");
+      this.state = this.qrReturnState || "TITLE";
+      if (this.state === "PLAYING" && !this.touchUIEnabled) {
+        this.requestLock();
+      }
+    });
   }
 
   toggleMute() {

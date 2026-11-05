@@ -15,8 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;800&family=Prompt:wght@400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-ClhVmQI5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-B_j_0QPX.css">
+    <script type="module" crossorigin src="/assets/index-CuLrIaO8.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CKzNx5Gf.css">
   </head>
   <body>
     <div id="canvas-container"></div>
@@ -179,6 +179,7 @@
 
         <div class="title-actions">
           <button id="btn-start" class="btn-primary" disabled>กำลังโหลดข้อมูล...</button>
+          <button id="btn-open-qr-title" class="btn-secondary">📲 เล่นบนมือถือ / iPad</button>
           <button id="btn-open-gallery-title" class="btn-secondary">📖 สมุดสะสมภาพ</button>
         </div>
       </div>
@@ -204,6 +205,7 @@
 
         <div class="pause-actions">
           <button id="btn-resume" class="btn-primary">▶ เล่นต่อ (Resume)</button>
+          <button id="btn-open-qr-pause" class="btn-secondary">📲 QR เล่นบนมือถือ / iPad</button>
           <button id="btn-open-gallery-pause" class="btn-secondary">📖 สมุดสะสมความผิดปกติ</button>
           <button id="btn-restart" class="btn-secondary">🔄 เริ่มใหม่ที่ทางออก 0</button>
           <button id="btn-back-title" class="btn-secondary">🏠 กลับหน้าหลัก</button>
@@ -259,6 +261,27 @@
           <button id="btn-play-again" class="btn-primary">🔄 เล่นรอบใหม่ (ล่าความผิดปกติให้ครบ!)</button>
           <button id="btn-vic-gallery" class="btn-secondary">📖 เปิดสมุดสะสมความผิดปกติ</button>
         </div>
+      </div>
+    </div>
+
+    <!-- Mobile / iPad QR Access Modal -->
+    <div id="qr-modal" class="overlay-screen hidden">
+      <div class="modal-card" style="max-width: 440px; text-align: center">
+        <h2 style="font-size: 1.4rem; margin-bottom: 6px">📲 เล่นบนมือถือ หรือ iPad</h2>
+        <p class="modal-sub" style="margin-bottom: 14px">เชื่อมต่อ Wi-Fi เดียวกัน แล้วใช้กล้องสแกนเพื่อเปิดเล่นได้ทันที!</p>
+        <div style="background: #ffffff; padding: 14px; border-radius: 16px; display: inline-block; margin: 0 auto 14px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5)">
+          <img src="/qrcode.png" alt="QR Code" style="width: 200px; height: 200px; display: block" />
+        </div>
+        <div style="font-family: monospace; font-size: 1.05rem; font-weight: bold; color: var(--metro-yellow); background: rgba(0,0,0,0.5); border: 1px solid rgba(250, 204, 21, 0.3); padding: 8px 12px; border-radius: 8px; margin-bottom: 14px; user-select: all">
+          http://192.168.1.34:5174/
+        </div>
+        <ol style="text-align: left; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin: 0 0 18px 24px; padding: 0">
+          <li>ต่อ Wi-Fi วงเดียวกันกับคอมพิวเตอร์</li>
+          <li>เปิดแอพกล้อง (Camera) บน iPhone / iPad หรือ Android</li>
+          <li>แตะแถบแจ้งเตือนสีเหลืองเพื่อเปิดเล่นบนเบราว์เซอร์</li>
+          <li>เล่นผ่านระบบ Dual-Touch สัมผัสเสมือนจริงลื่นๆ ได้ทันที!</li>
+        </ol>
+        <button id="btn-close-qr" class="btn-primary" style="width: 100%">✕ ปิดหน้าต่าง</button>
       </div>
     </div>
 
